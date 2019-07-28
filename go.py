@@ -1,4 +1,4 @@
-from deuces import Card, EvaluatorNumpy, Deck
+from deuces_numpy import Card, EvaluatorNumpy, Deck
 import numpy as np
 
 # create a card
@@ -57,3 +57,9 @@ print(f"Player 2 hand rank = {p2_score} {evaluator.class_to_string(p2_class)}")
 # hand_summary doesn't work
 # hands = [player1_hand, player2_hand]
 # evaluator.hand_summary(board, hands)
+
+import time
+hands = evaluator.simulate_hands(250000, 7)
+t = time.time()
+evaluator.evaluate(hands)
+print(time.time() - t)
