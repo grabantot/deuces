@@ -1,4 +1,5 @@
-from deuces import Card, Evaluator, Deck
+from deuces import Card, EvaluatorNumpy, Deck
+import numpy as np
 
 # create a card
 card = Card.new('Qh')
@@ -18,11 +19,11 @@ hand = [
 Card.print_pretty_cards(board + hand)
 
 # create an evaluator
-evaluator = Evaluator()
+evaluator = EvaluatorNumpy()
 
 # and rank your hand
-rank = evaluator.evaluate(board, hand)
-print()
+rank = evaluator.evaluate_hands5(np.array([board + hand]))
+print(rank)
 # or for random cards or games, create a deck
 print("Dealing a new hand...")
 deck = Deck()
@@ -39,8 +40,10 @@ Card.print_pretty_cards(player1_hand)
 print("Player 2's cards:")
 Card.print_pretty_cards(player2_hand)
 
-p1_score = evaluator.evaluate(board, player1_hand)
-p2_score = evaluator.evaluate(board, player2_hand)
+hands = np.array([board + player1_hand, board + player2_hand])
+
+scores = evaluator.evaluate(hands)
+p1_score, p2_score = scores
 
 # bin the scores into classes
 p1_class = evaluator.get_rank_class(p1_score)
@@ -51,5 +54,6 @@ print(f"Player 1 hand rank = {p1_score} {evaluator.class_to_string(p1_class)}")
 print(f"Player 2 hand rank = {p2_score} {evaluator.class_to_string(p2_class)}")
 
 # or just a summary of the entire hand
-hands = [player1_hand, player2_hand]
-evaluator.hand_summary(board, hands)
+# hand_summary doesn't work
+# hands = [player1_hand, player2_hand]
+# evaluator.hand_summary(board, hands)
