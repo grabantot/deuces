@@ -10,7 +10,7 @@ $ pip install deuces-numpy
 
 ## Implementation notes
 
-Deuces-numpy currently handles only 7 card hand lookups (via evaluate method). This is not just a wrapper, the whole score calculation is rewritten in numpyso it's really fast. Original lookup tables are used.
+Deuces-numpy currently handles only 7 card hand lookups (via evaluate method). This is not just a wrapper, the whole score calculation is rewritten in numpy so it's really fast. Original lookup tables are used.
 
 Some extra functionality provided:
 - evaluate_hands5(self, hands)
