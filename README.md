@@ -21,6 +21,7 @@ Some extra functionality provided:
 
 ```python
 from deuces_numpy import Deck, EvaluatorNumpy
+import numpy as np
 deck = Deck()
 board = deck.draw(5)
 player1_hand = deck.draw(2)

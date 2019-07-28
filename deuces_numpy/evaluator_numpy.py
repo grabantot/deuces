@@ -1,7 +1,6 @@
 from . import Deck
 from . import Evaluator
 import numpy as np
-import pandas as pd
 import scipy.special
 import itertools
 

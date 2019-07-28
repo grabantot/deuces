@@ -5,15 +5,19 @@ Deuces-numpy: Numpy version of deuces package
 from setuptools import setup
 
 setup(
-    name='deuces-numpy',
-    version='0.1',
+    name='deuces_numpy',
+    version='0.5',
     description=__doc__,
     long_description='descr',
     long_description_content_type='text/plain',
     author='Anatol Grabowski',
     url='https://github.com/grabantot/deuces-numpy',
     license='MIT',
-    packages=['deuces'],
+    packages=['deuces_numpy'],
+    install_requires=[
+        'numpy',
+        'scipy',
+    ],
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
