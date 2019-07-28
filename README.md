@@ -10,7 +10,8 @@ $ pip install deuces-numpy
 
 ## Implementation notes
 
-Deuces-numpy currently handles only 7 card hand lookups (via evaluate method).
+Deuces-numpy currently handles only 7 card hand lookups (via evaluate method). This is not just a wrapper, the whole score calculation is rewritten in numpyso it's really fast. Original lookup tables are used.
+
 Some extra functionality provided:
 - evaluate_hands5(self, hands)
 - simulate_hands(self, n_sims, n_cards=5, deck=Deck.GetFullDeck()
@@ -31,6 +32,9 @@ hands = np.array([board + player1_hand, board + player2_hand])
 scores = evaluator.evaluate(hands)
 print(scores)
 ```
+
+## Related
+See also https://github.com/grabantot/numpy_shuffle_row_wise.
 
 ## License
 
